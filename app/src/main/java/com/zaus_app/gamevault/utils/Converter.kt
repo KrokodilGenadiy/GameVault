@@ -9,8 +9,9 @@ object Converter {
         list?.forEach {
             result.add(
                 Game(
-                    title = it.name,
-                    background = it.backgroundImage
+                    name = it.name,
+                    background = it.backgroundImage,
+                    rating = it.rating
                 )
             )
         }
