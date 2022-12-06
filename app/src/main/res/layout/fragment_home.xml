@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="4dp"
     android:background="@drawable/home_fragment_background"
     tools:context=".view.home_fargment.HomeFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="@color/colorAccent"
-        android:text="Home fragment" />
+        tools:listitem="@layout/game_item"/>
 
 </FrameLayout>

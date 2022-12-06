@@ -1,6 +1,7 @@
 package com.zaus_app.gamevault.utils
 
 import com.zaus_app.gamevault.data.Game
+import com.zaus_app.gamevault.data.Genre
 import com.zaus_app.gamevault.data.RawgGame
 
 object Converter {
@@ -11,10 +12,19 @@ object Converter {
                 Game(
                     name = it.name,
                     background = it.backgroundImage,
+                    genres = convertGenresToString(it.genres),
                     rating = it.rating
                 )
             )
         }
         return result
+    }
+
+    fun convertGenresToString(genres: List<Genre>): String {
+        var result = ""
+        genres.forEach{
+            result = "$result${it.name},"
+        }
+        return "Genres: "+result.dropLast(1)
     }
 }

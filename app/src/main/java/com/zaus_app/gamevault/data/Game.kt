@@ -7,5 +7,6 @@ import kotlinx.parcelize.Parcelize
 data class Game(
     val name: String,
     val background: String,
+    val genres: String,
     val rating: Double
 ) : Parcelable
