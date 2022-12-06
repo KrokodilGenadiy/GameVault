@@ -1,7 +1,7 @@
 package com.zaus_app.moviefrumy_2.data.paging
 
 import androidx.paging.*
-import com.zaus_app.gamevault.data.Game
+import com.zaus_app.gamevault.data.entity.Game
 import com.zaus_app.gamevault.domain.Interactor
 import com.zaus_app.gamevault.utils.Converter
 import kotlinx.coroutines.flow.Flow
@@ -51,7 +51,7 @@ internal class GamesRemoteDataSourceImpl(
     private val interactor: Interactor
 ) : FilmsRemoteDataSource {
 
-    override fun getMovies(): Flow<PagingData<Game>> {
+    override fun getGames(): Flow<PagingData<Game>> {
         return Pager(
             config = PagingConfig(
                 pageSize = NETWORK_PAGE_SIZE,

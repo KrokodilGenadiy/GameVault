@@ -1,4 +1,4 @@
-package com.zaus_app.gamevault.data
+package com.zaus_app.gamevault.data.entity
 
 import com.google.gson.annotations.SerializedName
 data class RawgGame(

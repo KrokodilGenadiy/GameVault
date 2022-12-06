@@ -2,7 +2,7 @@ package com.zaus_app.moviefrumy_20.view.rv_viewholders
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.zaus_app.gamevault.data.Game
+import com.zaus_app.gamevault.data.entity.Game
 import com.zaus_app.gamevault.databinding.GameItemBinding
 
 class GameViewHolder(binding: GameItemBinding, clickAtPosition: () -> Unit) : RecyclerView.ViewHolder(binding.root) {

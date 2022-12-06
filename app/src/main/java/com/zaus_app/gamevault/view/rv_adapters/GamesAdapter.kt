@@ -3,7 +3,7 @@ package com.zaus_app.moviefrumy_20.view.rv_adaptes
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
-import com.zaus_app.gamevault.data.Game
+import com.zaus_app.gamevault.data.entity.Game
 import com.zaus_app.gamevault.databinding.GameItemBinding
 import com.zaus_app.moviefrumy_2.view.rv_adaptes.GameDiffCallBack
 import com.zaus_app.moviefrumy_20.view.rv_viewholders.GameViewHolder

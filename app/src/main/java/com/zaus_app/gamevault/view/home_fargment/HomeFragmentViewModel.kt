@@ -6,7 +6,7 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.map
 import com.zaus_app.gamevault.App
-import com.zaus_app.gamevault.data.Game
+import com.zaus_app.gamevault.data.entity.Game
 import com.zaus_app.gamevault.domain.Interactor
 import com.zaus_app.moviefrumy_2.data.paging.FilmsRemoteDataSource
 import com.zaus_app.moviefrumy_2.data.paging.GamesRemoteDataSourceImpl
@@ -25,7 +25,7 @@ class HomeFragmentViewModel: ViewModel() {
     }
 
     fun getMovies(): Flow<PagingData<Game>> {
-        return gamesRemoteDataSource.getMovies()
+        return gamesRemoteDataSource.getGames()
             .map { pagingData ->
                 pagingData.map {
                     it

@@ -1,8 +1,8 @@
 package com.zaus_app.gamevault.utils
 
-import com.zaus_app.gamevault.data.Game
-import com.zaus_app.gamevault.data.Genre
-import com.zaus_app.gamevault.data.RawgGame
+import com.zaus_app.gamevault.data.entity.Game
+import com.zaus_app.gamevault.data.entity.Genre
+import com.zaus_app.gamevault.data.entity.RawgGame
 
 object Converter {
     fun convertApiListToDtoList(list: List<RawgGame>?): List<Game> {
