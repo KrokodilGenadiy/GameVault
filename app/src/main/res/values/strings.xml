@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GameVault</string>
+    <string name="menu_home_title">Home</string>
+    <string name="menu_favorites_title">Favorites</string>
+    <string name="menu_news_title">News</string>
+    <string name="menu_settings_title">Settings</string>
 </resources>
