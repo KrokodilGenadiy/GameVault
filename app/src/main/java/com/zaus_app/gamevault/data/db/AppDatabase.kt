@@ -7,5 +7,5 @@ import com.zaus_app.gamevault.data.entity.Game
 
 @Database(entities = [Game::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun filmDao(): GamesDao
+    abstract fun gamesDao(): GamesDao
 }
