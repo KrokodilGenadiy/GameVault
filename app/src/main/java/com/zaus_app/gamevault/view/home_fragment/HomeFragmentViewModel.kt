@@ -1,4 +1,4 @@
-package com.zaus_app.gamevault.view.home_fargment
+package com.zaus_app.gamevault.view.home_fragment
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

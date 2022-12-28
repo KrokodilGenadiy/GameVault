@@ -6,7 +6,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.zaus_app.gamevault.R
 import com.zaus_app.gamevault.databinding.ActivityMainBinding
-import com.zaus_app.gamevault.view.home_fargment.HomeFragment
+import com.zaus_app.gamevault.view.home_fragment.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

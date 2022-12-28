@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/drawable/background_search_view.xml" value="0.321" />
         <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/drawable/favorites_fragment_background.xml" value="0.195" />
         <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/drawable/home_fragment_background.xml" value="0.195" />
+        <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/drawable/ic_filter_icon.xml" value="0.321" />
         <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/drawable/ic_round_home.xml" value="0.196" />
         <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/drawable/ic_round_news.xml" value="0.196" />
         <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/drawable/ic_round_search.xml" value="0.196" />
@@ -18,7 +20,9 @@
         <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/layout/fragment_search.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/layout/fragment_settings.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/layout/game_item.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/layout/main_recycler.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/menu/bottom_menu.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/alexu/AndroidStudioProjects/GameVault/app/src/main/res/menu/toolbar.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
