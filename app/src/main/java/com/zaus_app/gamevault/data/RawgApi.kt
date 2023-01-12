@@ -8,6 +8,7 @@ import retrofit2.http.Query
 interface RawgApi {
     @GET("games")
     suspend fun getGames(
+        @Query("search") query: String,
         @Query("key") apiKey: String,
         @Query("page") page: Int
     ): Response<RawgResultsDto>

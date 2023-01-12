@@ -7,30 +7,36 @@ import androidx.paging.cachedIn
 import androidx.paging.map
 import com.zaus_app.gamevault.App
 import com.zaus_app.gamevault.data.entity.Game
+import com.zaus_app.gamevault.data.paging.GamesRemoteDataSourceImpl
 import com.zaus_app.gamevault.domain.Interactor
-import com.zaus_app.moviefrumy_2.data.paging.FilmsRemoteDataSource
-import com.zaus_app.moviefrumy_2.data.paging.GamesRemoteDataSourceImpl
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 class HomeFragmentViewModel: ViewModel() {
     @Inject
     lateinit var interactor: Interactor
-    private val gamesRemoteDataSource: FilmsRemoteDataSource
+    private val _query = MutableStateFlow("")
+    private val query: StateFlow<String> = _query.asStateFlow()
+    val games: StateFlow<PagingData<Game>>
 
     init {
         App.instance.dagger.inject(this)
-        gamesRemoteDataSource = GamesRemoteDataSourceImpl(interactor)
+        games = query.flatMapLatest {
+            getGames()
+        }.stateIn(viewModelScope, SharingStarted.Lazily, PagingData.empty())
     }
 
-    fun getMovies(): Flow<PagingData<Game>> {
-        return gamesRemoteDataSource.getGames()
+    private fun getGames(): Flow<PagingData<Game>> {
+        return GamesRemoteDataSourceImpl(query.value,interactor).getMovies()
             .map { pagingData ->
                 pagingData.map {
                     it
                 }
             }
             .cachedIn(viewModelScope)
+    }
+
+    fun setQuery(query: String) {
+        _query.tryEmit(query)
     }
 }

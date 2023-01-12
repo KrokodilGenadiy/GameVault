@@ -5,8 +5,8 @@ import com.zaus_app.gamevault.data.entity.RawgResultsDto
 import com.zaus_app.moviefrumy_2.data.API
 import retrofit2.Response
 
-class Interactor (private val retrofitService: RawgApi) {
-    suspend fun getGamesFromApi(page: Int): Response<RawgResultsDto> {
-        return retrofitService.getGames(API.KEY, page)
+class Interactor ( private val retrofitService: RawgApi) {
+    suspend fun getGamesFromApi(query:String, page: Int): Response<RawgResultsDto> {
+        return retrofitService.getGames(query, API.KEY, page)
     }
 }

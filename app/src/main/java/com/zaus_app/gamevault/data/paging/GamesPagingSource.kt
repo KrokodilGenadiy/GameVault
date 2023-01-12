@@ -11,13 +11,14 @@ import java.io.IOException
 private const val TMDB_STARTING_PAGE_INDEX = 1
 
 class GamesPagingSource(
+    private val query: String,
     private val interactor: Interactor
 ) : PagingSource<Int, Game>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Game> {
         val pageIndex = params.key ?: TMDB_STARTING_PAGE_INDEX
         return try {
-            val response = interactor.getGamesFromApi(pageIndex)
+            val response = interactor.getGamesFromApi(query,pageIndex)
             val films = Converter.convertApiListToDtoList(response.body()?.results)
             val nextKey =
                 if (films.isEmpty()) {
@@ -42,24 +43,5 @@ class GamesPagingSource(
             state.closestPageToPosition(anchorPosition)?.prevKey?.plus(1)
                 ?: state.closestPageToPosition(anchorPosition)?.nextKey?.minus(1)
         }
-    }
-}
-
-const val NETWORK_PAGE_SIZE = 25
-
-internal class GamesRemoteDataSourceImpl(
-    private val interactor: Interactor
-) : FilmsRemoteDataSource {
-
-    override fun getGames(): Flow<PagingData<Game>> {
-        return Pager(
-            config = PagingConfig(
-                pageSize = NETWORK_PAGE_SIZE,
-                enablePlaceholders = false
-            ),
-            pagingSourceFactory = {
-                GamesPagingSource(interactor)
-            }
-        ).flow
     }
 }
