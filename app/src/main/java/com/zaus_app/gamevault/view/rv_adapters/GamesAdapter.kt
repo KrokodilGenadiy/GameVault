@@ -15,7 +15,7 @@ class GamesAdapter(private val clickListener: OnItemClickListener) : PagingDataA
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameViewHolder {
         val binding = GameItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return GameViewHolder(binding) {
-           // clickListener.click(getItem(it)!!)
+           clickListener.click(getItem(it)!!.id)
         }
     }
     override fun onBindViewHolder(holder: GameViewHolder, position: Int) {

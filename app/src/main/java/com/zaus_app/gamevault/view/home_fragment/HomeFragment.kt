@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zaus_app.gamevault.databinding.FragmentHomeBinding
+import com.zaus_app.gamevault.view.MainActivity
 import com.zaus_app.moviefrumy_20.view.rv_adaptes.GamesAdapter
 import com.zaus_app.moviefrumy_20.view.rv_adaptes.TopSpacingItemDecoration
 import kotlinx.coroutines.Job
@@ -27,6 +28,7 @@ class HomeFragment : Fragment() {
     private val gamesAdapter by lazy {
         GamesAdapter(object : GamesAdapter.OnItemClickListener {
             override fun click(id: Int) {
+                (requireActivity() as MainActivity).launchDetailsFragment(id)
             }
         })
     }

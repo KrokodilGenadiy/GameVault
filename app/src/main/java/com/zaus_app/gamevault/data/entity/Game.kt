@@ -10,7 +10,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @Entity(tableName = "favorite_games", indices = [Index(value = ["name"], unique = true)])
 data class Game(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @PrimaryKey val id: Int,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "background_path") val background: String,
     @ColumnInfo(name = "genres") val genres: String,

@@ -1,6 +1,7 @@
 package com.zaus_app.gamevault.utils
 
 import com.zaus_app.gamevault.data.entity.Game
+import com.zaus_app.gamevault.data.entity.GameDetails
 import com.zaus_app.gamevault.data.entity.Genre
 import com.zaus_app.gamevault.data.entity.RawgGame
 
@@ -10,6 +11,7 @@ object Converter {
         list?.forEach {
             result.add(
                 Game(
+                    id = it.id,
                     name = it.name,
                     background = it.backgroundImage,
                     genres = convertGenresToString(it.genres),

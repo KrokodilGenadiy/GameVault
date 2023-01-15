@@ -5,7 +5,7 @@ import com.bumptech.glide.Glide
 import com.zaus_app.gamevault.data.entity.Game
 import com.zaus_app.gamevault.databinding.GameItemBinding
 
-class GameViewHolder(binding: GameItemBinding, clickAtPosition: () -> Unit) : RecyclerView.ViewHolder(binding.root) {
+class GameViewHolder(binding: GameItemBinding, clickAtPosition: (Int) -> Unit) : RecyclerView.ViewHolder(binding.root) {
 
     private val title = binding.name
     private val poster = binding.gameBackground
@@ -14,7 +14,7 @@ class GameViewHolder(binding: GameItemBinding, clickAtPosition: () -> Unit) : Re
 
     init {
         binding.root.setOnClickListener {
-            clickAtPosition()
+            clickAtPosition(absoluteAdapterPosition)
         }
     }
 
